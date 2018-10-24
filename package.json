@@ -1,0 +1,91 @@
+{
+  "name": "ym-official",
+  "version": "1.0.0",
+  "description": "next(+redux)+express project template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "next build",
+    "dev": "node server/startup.js",
+    "prod": "NODE_ENV=production node server/startup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:fisherw/next_redux_express_template.git"
+  },
+  "keywords": [
+    "official"
+  ],
+  "author": "fisher <wangjiang.fly.1989@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-less": "^1.0.1",
+    "async": "^2.6.1",
+    "autoprefixer": "^9.2.1",
+    "body-parser": "^1.18.3",
+    "commander": "^2.19.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-signature": "^1.1.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12",
+    "hash.js": "^1.1.5",
+    "helmet": "^3.14.0",
+    "ioredis": "^4.0.2",
+    "less": "^3.8.1",
+    "lodash": "^4.17.10",
+    "lodash-decorators": "^6.0.0",
+    "moment": "^2.22.2",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "next": "^7.0.2",
+    "next-compose-plugins": "^2.1.1",
+    "next-redux-wrapper": "^2.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "qs": "^6.5.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redis3x-session": "^1.2.2",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "cross-env": "^5.1.1",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.less": "stylelint --syntax less"
+  },
+  "engines": {
+    "node": "8.9.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "Android >= 2.1",
+    "ios 7",
+    "firefox >= 15"
+  ]
+}
