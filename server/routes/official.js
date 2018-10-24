@@ -3,13 +3,13 @@ var htmlProcessor = require('../components/html-processor');
 const getNextApp = require('../server').getNextApp;
 
 /**
- * 页面-管理系统-登录
+ * 测试页面渲染
  * @param  {[type]}   req  [description]
  * @param  {[type]}   res  [description]
  * @param  {Function} next [description]
  * @return {[type]}        [description]
  */
-var admin = async function(req, res, next) {
+var testAction = async function(req, res, next) {
     // var filePath = path.resolve(__dirname, '../../public/index.html');
     // var options = {
     //     filePath: filePath
@@ -37,5 +37,5 @@ var admin = async function(req, res, next) {
  */
 module.exports = [
     // admin page
-    ['GET', '/test', admin]
+    ['GET', '/test', testAction]
 ];
