@@ -1,17 +1,17 @@
 {
   "name": "ym-official",
   "version": "1.0.0",
-  "description": "next(+redux)+express project template",
+  "description": "ym official site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "next build",
-    "dev": "node server/startup.js",
+    "dev": "NODE_ENV=development node server/startup.js",
     "prod": "NODE_ENV=production node server/startup.js"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:fisherw/next_redux_express_template.git"
+    "url": "ssh://git@git.almost.yunmicloud.com:7642/yunmi-frontend/ym-official.git"
   },
   "keywords": [
     "official"
@@ -20,10 +20,12 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-css": "^1.0.2-canary.0",
     "@zeit/next-less": "^1.0.1",
+    "antd": "^3.10.3",
     "async": "^2.6.1",
     "autoprefixer": "^9.2.1",
+    "babel-plugin-import": "^1.11.0",
     "body-parser": "^1.18.3",
     "commander": "^2.19.0",
     "cookie-parser": "^1.4.3",
@@ -43,6 +45,8 @@
     "multer": "^1.4.1",
     "next": "^7.0.2",
     "next-compose-plugins": "^2.1.1",
+    "next-images": "^1.0.1",
+    "next-optimized-images": "^1.4.1",
     "next-redux-wrapper": "^2.0.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
@@ -50,6 +54,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-transition-group": "^2.5.0",
     "redis3x-session": "^1.2.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
@@ -57,8 +62,11 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "babel-eslint": "^9.0.0",
+    "copy-webpack-plugin": "^4.5.4",
     "cross-env": "^5.1.1",
+    "emit-file-loader": "0.0.2",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^3.0.1",
@@ -69,7 +77,9 @@
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.2.0"
+    "lint-staged": "^7.2.0",
+    "url-loader": "^1.1.2",
+    "webpack-upload": "^2.1.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,less}": [
