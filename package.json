@@ -1,7 +1,7 @@
 {
-  "name": "ym-official",
+  "name": "official",
   "version": "1.0.0",
-  "description": "ym official site",
+  "description": "official site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.almost.yunmicloud.com:7642/yunmi-frontend/ym-official.git"
+    "url": "ssh://git@github.com:fisherw/next_redux_express_template.git"
   },
   "keywords": [
     "official"
@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@zeit/next-css": "^1.0.2-canary.0",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "antd": "^3.10.3",
     "async": "^2.6.1",

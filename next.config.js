@@ -12,8 +12,12 @@ const optimizedImages = require('next-optimized-images');
 const prod = process.env.NODE_ENV === 'production';
 
 const plugins = [
+    // 使用这个插件来解决css中图片处理的问题以及上传不了static目录中的图片到cdn的问题
     [optimizedImages, {
+        // 编译后static目录下的图片存放目录
         imagesFolder: 'imgs',
+        // 编译后资源引用路径（开发环境使用本地web服务访问，不能设置路径否则访问不了
+        // 生产环境使用的是cdn，需与cdn前缀一致）
         imagesPublicPath: prod ? '/official/_next/static/imgs/': '',
         optimizeImagesInDev: false,
         inlineImageLimit: 3072,
@@ -29,9 +33,9 @@ const plugins = [
         //     // parser: false, 
         //     autoprefixer: true
         // }
-        lessLoaderOptions: {
-            javascriptEnabled: true,
-        },
+        // lessLoaderOptions: {
+        //     javascriptEnabled: true,
+        // },
     }],
 ];
 
@@ -43,10 +47,12 @@ if (typeof require !== 'undefined') {
 module.exports = withPlugins([...plugins],{
     useFileSystemPublicRoutes: false,
     distDir: 'build',
-    assetPrefix: prod? '//cdn.xxx.cc.com/official/': '',
+    assetPrefix: prod? '//cdn.sz01.xxx.cc/official/': '',
     pageExtensions: ['jsx', 'js'],
+    // buildid如果不更新，可能会导致访问到旧的编译后的资源，导致js报错
+    // Todo 待用更好的方式来利用缓存
     generateBuildId: async () => {
-        return 'bid2'
+        return new Date().getTime();
     },
     webpack: (config, options) => {
         const { isServer, buildId } = options
@@ -78,7 +84,7 @@ module.exports = withPlugins([...plugins],{
         if (prod && !isServer) {
             config.plugins.push(// 静态资源实现cdn上传
                 new WebpackUploadPlugin({
-                    receiver: 'http://receiver.yunmicloud.xin/receiver',
+                    receiver: 'http://xx.xxx.xin/receiver',
                     to: '/mnt02/res/official/_next'
                 })
             );
