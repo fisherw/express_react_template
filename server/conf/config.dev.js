@@ -7,8 +7,8 @@ const config = {
     'apiPrefix': '',
 
     'redisConf': {
-        nodes: '192.168.5.100:6379',
-        password: 'sYxw8jBJ9c',
+        nodes: 'x.x.5.x:x',
+        password: 'x',
     },
     'redisExpire': 60 * 60 * 24,
 
